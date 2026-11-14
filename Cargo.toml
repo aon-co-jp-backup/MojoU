@@ -1,0 +1,19 @@
+[package]
+name = "mojou"
+version = "0.1.0"
+edition = "2021"
+description = "MojoU (FUSION): a Mojo-style language. Python syntax on the surface, a memory-safe Rust implementation inside (no C++). One codebase for Windows, Linux, macOS, Android and iOS."
+license = "MIT"
+
+[[bin]]
+name = "mojou"
+path = "src/main.rs"
+
+[dependencies]
+rustpython-parser = { version = "0.4", default-features = false, features = ["num-bigint"] }
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"

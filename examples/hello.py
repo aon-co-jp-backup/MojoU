@@ -1,0 +1,9 @@
+def fib(n: int) -> int:
+    if n < 2:
+        return n
+    return fib(n - 1) + fib(n - 2)
+
+
+def main():
+    print("Hello from MojoL")
+    print(fib(20))
